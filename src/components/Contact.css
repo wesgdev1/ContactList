@@ -1,0 +1,21 @@
+.contact{
+
+  display: flex;
+  flex-direction: row;
+  background-color: #D6D6D6;
+  flex-wrap: wrap;
+  justify-content: center;
+  border: 2px solid black;
+  border-radius: 10px;
+  gap:2px;
+  width: 300px;
+  height: 160px;
+  font-size: 15px;
+}
+
+.contact__profile{
+
+  border-radius: 50%;
+  width: 10%;
+
+}

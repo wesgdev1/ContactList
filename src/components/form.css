@@ -1,0 +1,37 @@
+.form-register  {
+
+
+  background:#24303c;
+  width: 400px;
+  margin: 0 auto;
+  padding: 30px;
+  margin-top: 100px;
+  margin-bottom: 30px;
+  border-radius: 4px;
+  color: white;
+}
+
+
+.controls{
+
+  width: 80%;
+  background: #24303c;
+  padding: 10px;
+  border-radius: 3px;
+  margin-top: 16px;
+  color: white;
+}
+
+.buttons{
+
+  margin-top: 5px;
+
+
+}
+
+.buttons button{
+  margin-left: 10px;
+  background-color:aliceblue
+
+ 
+}
