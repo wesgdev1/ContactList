@@ -2,7 +2,7 @@ import React from 'react'
 import Contact from './contact'
 import './contactList.css'
 
-function ContactList({contacts}) {
+function ContactList({contacts,deleteContact}) {
 
   return (
     <div className='list'>
@@ -10,7 +10,7 @@ function ContactList({contacts}) {
 
      {contacts.map(function(contact,i){
 
-    return <Contact contact={contact} key={i}/>
+    return <Contact contact={contact} key={i} deleteContact={deleteContact} index={i}/>
 
      })}
    
