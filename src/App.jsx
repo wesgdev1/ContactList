@@ -31,6 +31,8 @@ function App() {
     setContactslist(provisional);
   };
 
+  const updateContact = (index) => {};
+
   return (
     <>
       <h1>LISTA DE CONTACTOS</h1>
@@ -40,7 +42,11 @@ function App() {
         addContact={addContact}
       ></Form>
       <div className="card">
-        <ContactList contacts={contactslist} deleteContact={deleteContact} />
+        <ContactList
+          contacts={contactslist}
+          deleteContact={deleteContact}
+          updateContact={updateContact}
+        />
       </div>
     </>
   );

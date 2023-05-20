@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Contact.css";
 
 function Contact({ contact, deleteContact, index }) {
+  const [update, setUpdate] = useState(false);
   const handlerClick = (event) => {
     deleteContact(index);
   };
@@ -15,8 +16,12 @@ function Contact({ contact, deleteContact, index }) {
       <div>
         <strong>{contact.name}</strong>
         <p>{contact.email}</p>
-        <p>{index}</p>
-        <img className="contact__profile" src={contact.image} alt="img" />
+        <p>{contact.phone}</p>
+        {/* <img
+          className="contact__profile"
+          src="https://cdn-icons-png.flaticon.com/512/2444/2444440.png"
+          alt="img"
+        /> */}
       </div>
 
       <div>
