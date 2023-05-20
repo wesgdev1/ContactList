@@ -3,9 +3,9 @@ import "./Contact.css";
 
 function Contact({ contact, deleteContact, index, updateContact }) {
   const [update, setUpdate] = useState(false);
-  const [newName, setNewName] = useState("");
-  const [newEmail, setNewEmail] = useState("");
-  const [newPhone, setNewPhone] = useState("");
+  const [newName, setNewName] = useState(contact.name);
+  const [newEmail, setNewEmail] = useState(contact.email);
+  const [newPhone, setNewPhone] = useState(contact.phone);
 
   const handlerClick = (event) => {
     deleteContact(index);
@@ -78,7 +78,9 @@ function Contact({ contact, deleteContact, index, updateContact }) {
         /> */}
 
       <div>
-        <button onClick={handleClickUpdate}>UPDATE</button>
+        <button onClick={handleClickUpdate}>
+          {update ? "SAVE" : "UPDATE"}
+        </button>
         <button onClick={handlerClick}>DELETE</button>
       </div>
     </div>
