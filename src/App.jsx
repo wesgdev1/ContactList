@@ -14,11 +14,11 @@ function App() {
     setShowForm(!showForm);
   };
 
-  const addContact = (name, email) => {
+  const addContact = (name, email, phone) => {
     const newContact = {
       name,
       email,
-      image: "https://cdn-icons-png.flaticon.com/512/2444/2444440.png",
+      phone,
     };
 
     setContactslist([...contactslist, newContact]);
@@ -31,7 +31,12 @@ function App() {
     setContactslist(provisional);
   };
 
-  const updateContact = (index) => {};
+  const updateContact = (name, email, phone, index) => {
+    console.log("procedemos a actualizar");
+    let temp = [...contactslist];
+    temp[index] = { name, email, phone };
+    setContactslist(temp);
+  };
 
   return (
     <>

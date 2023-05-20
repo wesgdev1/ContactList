@@ -39,6 +39,11 @@ const contacts = [
     email: "willienn@hotmail.com",
     phone: "3208719438",
   },
+  {
+    name: "lauren",
+    email: "willienn@hotmail.com",
+    phone: "3208719438",
+  },
 ];
 
 export default contacts;
