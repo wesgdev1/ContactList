@@ -82,11 +82,35 @@ function App() {
     }
   };
 
-  const updateContact = (name, email, phone, index) => {
-    // console.log("procedemos a actualizar");
+  const updateContact = async (name, email, phone, index) => {
     let temp = [...contactslist];
-    temp[index] = { name, email, phone };
-    setContactslist(temp);
+    const { id } = temp[index];
+    temp[index] = { id, name, email, phone };
+
+    const contactUpdate = temp[index];
+
+    try {
+      const response = await fetch(`${baseURL}/contacts/${id}`, {
+        ///////////////////////////////////////1
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(contactUpdate),
+      });
+
+      if (response.ok) {
+        ///////////
+        setContactslist(temp);
+      }
+    } catch (error) {
+      console.error(error);
+    }
+
+    // console.log("procedemos a actualizar");
+    //let temp = [...contactslist];
+    // temp[index] = { name, email, phone };
+    //setContactslist(temp);
   };
 
   return (
