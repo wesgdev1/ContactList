@@ -1,28 +1,63 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 import ContactList from "./components/ContactList";
-import contacts from "./data/contacts";
+//import contacts from "./data/contacts";
 import Form from "./components/Form";
+
+const baseURL = "http://localhost:3001";
 
 function App() {
   const [showForm, setShowForm] = useState(false);
-  const [contactslist, setContactslist] = useState(contacts);
+  const [contactslist, setContactslist] = useState([]);
+
+  async function loadContacts() {
+    try {
+      const response = await fetch(`${baseURL}/contacts`);
+      if (response.ok) {
+        const contacts2 = await response.json();
+        setContactslist(contacts2);
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  useEffect(function () {
+    loadContacts();
+  }, []);
 
   const toogleForm = (event) => {
     setShowForm(!showForm);
   };
 
-  const addContact = (name, email, phone) => {
-    const newContact = {
+  const addContact = async (name, email, phone) => {
+    const data = {
       name,
       email,
       phone,
     };
 
-    setContactslist([...contactslist, newContact]);
-    toogleForm();
+    try {
+      const response = await fetch(`${baseURL}/contacts`, {
+        ///////////////////////////////////////1
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        const newContact = await response.json();
+
+        setContactslist([...contactslist, newContact]);
+        toogleForm();
+      }
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   const deleteContact = (index) => {
