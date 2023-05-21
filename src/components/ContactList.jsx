@@ -9,7 +9,7 @@ function ContactList({ contacts, deleteContact, updateContact }) {
         return (
           <Contact
             contact={contact}
-            key={i}
+            key={contact.id}
             deleteContact={deleteContact}
             index={i}
             updateContact={updateContact}

@@ -54,20 +54,36 @@ function App() {
 
         setContactslist([...contactslist, newContact]);
         toogleForm();
+
+        //loadContacts();
       }
     } catch (error) {
       console.error(error);
     }
   };
 
-  const deleteContact = (index) => {
-    let provisional = [...contactslist];
-    provisional.splice(index, 1);
-    setContactslist(provisional);
+  const deleteContact = async (index) => {
+    const contactSelected = contactslist[index];
+    const { id } = contactSelected;
+
+    try {
+      const response = await fetch(`${baseURL}/contacts/${id}`, {
+        ///////////////////////////////////////1
+        method: "DELETE",
+      });
+
+      if (response.ok) {
+        let provisional = [...contactslist];
+        provisional.splice(index, 1);
+        setContactslist(provisional);
+      }
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   const updateContact = (name, email, phone, index) => {
-    console.log("procedemos a actualizar");
+    // console.log("procedemos a actualizar");
     let temp = [...contactslist];
     temp[index] = { name, email, phone };
     setContactslist(temp);

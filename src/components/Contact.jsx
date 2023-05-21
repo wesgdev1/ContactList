@@ -65,7 +65,9 @@ function Contact({ contact, deleteContact, index, updateContact }) {
         </div>
       ) : (
         <div>
-          <strong>{contact.name}</strong>
+          <p>
+            <strong>{contact.name}</strong>
+          </p>
           <p>{contact.email}</p>
           <p>{contact.phone}</p>
         </div>
