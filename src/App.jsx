@@ -121,6 +121,7 @@ function App() {
         toogleForm={toogleForm}
         addContact={addContact}
       ></Form>
+      <p>Aqui podras guardar tus contactos de manera rapida y facil</p>
       <div className="card">
         <ContactList
           contacts={contactslist}
@@ -128,6 +129,7 @@ function App() {
           updateContact={updateContact}
         />
       </div>
+      <p>Numero de contactos: {contactslist.length}</p>
     </>
   );
 }
