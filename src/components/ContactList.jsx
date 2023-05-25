@@ -1,5 +1,6 @@
 import React from "react";
-import Contact from "./contact";
+//import Contact from "./contact";
+import Contact from "./Contact";
 import "./contactList.css";
 
 function ContactList({ contacts, deleteContact, updateContact }) {
