@@ -6,7 +6,7 @@ import ContactList from "./components/ContactList";
 //import contacts from "./data/contacts";
 import Form from "./components/Form";
 
-const baseURL = "http://localhost:3001";
+const baseURL = "https://contacts-api-mjnc.onrender.com";
 
 function App() {
   const [showForm, setShowForm] = useState(false);

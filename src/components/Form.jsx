@@ -35,6 +35,7 @@ function Form({ showForm, toogleForm, addContact }) {
           <h3>Agregar nuevo contacto</h3>
           <div>
             <input
+              required
               onChange={handlerChangeName}
               className="controls"
               type="text"
@@ -42,6 +43,7 @@ function Form({ showForm, toogleForm, addContact }) {
               placeholder="Ingrese el nombre"
             />
             <input
+              required
               onChange={handlerChangeEmail}
               className="controls"
               type="text"
@@ -49,6 +51,7 @@ function Form({ showForm, toogleForm, addContact }) {
               placeholder="Ingrese el Email"
             />
             <input
+              required
               onChange={handlerChangePhone}
               className="controls"
               type="text"
