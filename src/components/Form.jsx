@@ -11,6 +11,9 @@ function Form({ showForm, toogleForm, addContact }) {
 
     addContact(name, email, phone);
     console.log("entre por agregar");
+    setEmail("");
+    setPhone("");
+    setname("");
   };
 
   const handlerChangeName = (event) => {
